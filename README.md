@@ -65,11 +65,25 @@ php artisan key:generate
 
 # 5. Build and run
 php artisan storage:link
-npm run build
-php artisan serve
-npm run dev  # In a separate terminal
+composer run dev
 
 
 # Access the Application
 ## Local: http://localhost:8000
 ## Login: user@demo.com / password AND user2@demo.com / password
+
+## ⚠️ Known Issues
+
+| Issue | Severity | Status |
+|-------|----------|--------|
+| **View-Only users can edit documents** | 🔴 High | Needs frontend permission check |
+| **Shared users can delete documents** | 🔴 High | Delete button should be hidden for non-owners |
+| File upload creates new document (not attachment) | 🟡 Medium | Planned enhancement |
+| Shared documents require refresh to appear | 🟢 Low | Could add real-time updates |
+
+### What Works Well ✅
+- Document creation, editing, deletion
+- Auto-save with status indicators
+- File import (.txt, .md, .docx)
+- Basic sharing (email + permission)
+- Responsive design
